@@ -1,0 +1,55 @@
+.search-autoComplete-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Restrict max width */
+    margin: 50px auto 0; /* Adds top margin, centers horizontally */
+    position: relative; /* Needed for absolute positioning of dropdown */
+}
+
+.search-autoComplete-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 24px; /* Makes it rounded like Google's search */
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.search-autoComplete-container input:focus {
+    border-color: #4285f4; /* Google blue */
+    box-shadow: 0 4px 10px rgba(66, 133, 244, 0.3);
+}
+
+/* Styling the suggestions dropdown */
+.search-autoComplete-container ul {
+    list-style: none;
+    width: 100%;
+    max-height: 250px; /* Prevents it from getting too big */
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5px; /* Space between input and dropdown */
+    padding: 0;
+    position: absolute;
+    top: 100%; /* Places it right below input */
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Each suggestion item */
+.search-autoComplete-container ul li {
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.search-autoComplete-container ul li:hover {
+    background: #f1f3f4; /* Light gray hover effect like Google */
+}
